@@ -5,92 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MU Kabra - Mantenimiento</title>
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
 <style>
+/* BODY & BACKGROUND */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Orbitron', Arial, sans-serif;
     background: linear-gradient(270deg, #000000, #0a0a0a, #1a1a1a);
     background-size: 600% 600%;
-    animation: bg 10s ease infinite;
-    color: white;
+    animation: bg 15s ease infinite;
+    color: #fff;
     text-align: center;
 }
 
+/* BACKGROUND ANIMATION */
 @keyframes bg {
     0% {background-position:0% 50%;}
     50% {background-position:100% 50%;}
     100% {background-position:0% 50%;}
 }
 
+/* LOGO */
 .logo {
-    width: 200px;
+    width: 250px;
     margin-top: 20px;
     animation: glow 2s infinite alternate;
 }
 
+/* GLOW ANIMATION */
 @keyframes glow {
     from {filter: drop-shadow(0 0 5px #00f);}
     to {filter: drop-shadow(0 0 20px #0ff);}
 }
 
+/* HEADINGS ANIMATION */
 h1 {
-    font-size: 40px;
+    font-size: 45px;
     animation: colorChange 3s infinite;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
 }
 
+/* COLOR CHANGE ANIMATION */
 @keyframes colorChange {
     0% {color:#00ffff;}
-    50% {color:#ff00ff;}
+    25% {color:#ff00ff;}
+    50% {color:#00ff00;}
+    75% {color:#ff9900;}
     100% {color:#00ffff;}
 }
 
+/* CONTENT BOX */
 .box {
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.75);
     margin: 20px auto;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 25px;
+    border-radius: 20px;
     width: 90%;
-    max-width: 600px;
-    box-shadow: 0 0 20px #00ffff;
+    max-width: 650px;
+    box-shadow: 0 0 25px #00ffff;
 }
 
+/* BUTTONS */
 .btn {
     display: block;
-    margin: 10px auto;
-    padding: 12px;
+    margin: 12px auto;
+    padding: 14px;
     width: 80%;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: bold;
     color: white;
     background: linear-gradient(45deg,#00c3ff,#0072ff);
     transition: 0.3s;
 }
-
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #00ffff;
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #00ffff;
 }
 
+/* FLAGS */
 .flags {
-    font-size: 30px;
+    font-size: 32px;
+    margin: 5px 0;
 }
 
+/* LANGUAGE SWITCH */
 .lang {
     cursor: pointer;
     margin: 5px;
-    padding: 5px 10px;
-    border: 1px solid white;
-    border-radius: 5px;
+    padding: 5px 12px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.lang:hover {
+    background: #00ffff;
+    color: #000;
 }
 
+/* BOTTOM IMAGE */
 img.bottom {
-    width: 300px;
-    margin-top: 20px;
+    width: 320px;
+    margin-top: 25px;
+}
+
+/* TEXT EFFECTS */
+p, h2, h3 {
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
 }
 </style>
 
 <script>
+// LANGUAGE SWITCH
 function setLang(lang) {
     document.getElementById("es").style.display = (lang=="es")?"block":"none";
     document.getElementById("en").style.display = (lang=="en")?"block":"none";
@@ -100,21 +128,24 @@ function setLang(lang) {
 </head>
 <body onload="setLang('es')">
 
-<img class="logo" src="https://i.ibb.co/KjmdKY0D/1769438992147.png">
+<!-- LOGO -->
+<img class="logo" src="https://i.ibb.co/KjmdKY0D/1769438992147.png" alt="MU Kabra Logo">
 
+<!-- MAIN TITLE -->
 <h1>MU KABRA ONLINE</h1>
 
+<!-- LANGUAGE BUTTONS -->
 <div>
     <span class="lang" onclick="setLang('es')">🇪🇸 Español</span>
     <span class="lang" onclick="setLang('en')">🇺🇸 English</span>
 </div>
 
+<!-- SPANISH CONTENT -->
 <div id="es">
 <div class="box">
 <h2>🚧 Servidor en mantenimiento</h2>
-<p>Estamos mejorando el servidor. Volvemos en unas horas 🔧</p>
+<p>Estamos trabajando en mejoras. Vuelve pronto 🔧</p>
 <p><b>Host:</b> Argentina 🇦🇷 LATAM</p>
-
 <p class="flags">🇦🇷 🇨🇱 🇵🇪 🇲🇽 🇧🇷 🇪🇸 🇺🇸</p>
 
 <h3>⚔️ Información del Server</h3>
@@ -129,16 +160,16 @@ function setLang(lang) {
 <a class="btn" href="https://discord.gg/myJAw5AMAB">💬 Discord</a>
 <a class="btn" href="#">⬇️ Descargar Juego</a>
 
-<p>Mientras tanto podés unirte a la comunidad 👆</p>
+<p>Mientras esperás, unite a nuestra comunidad 👆</p>
 </div>
 </div>
 
+<!-- ENGLISH CONTENT -->
 <div id="en">
 <div class="box">
 <h2>🚧 Server under maintenance</h2>
 <p>We are improving the server. Back in a few hours 🔧</p>
 <p><b>Host:</b> Argentina 🇦🇷 LATAM</p>
-
 <p class="flags">🇦🇷 🇨🇱 🇵🇪 🇲🇽 🇧🇷 🇪🇸 🇺🇸</p>
 
 <h3>⚔️ Server Info</h3>
@@ -157,7 +188,10 @@ function setLang(lang) {
 </div>
 </div>
 
-<img class="bottom" src="https://i.ibb.co/JWsPmYNm/1773777758387.png">
+<!-- BOTTOM IMAGE -->
+<a href="https://ibb.co/0pG3m0km">
+<img class="bottom" src="https://i.ibb.co/JWsPmYNm/1773777758387.png" alt="MU Kabra Banner">
+</a>
 
 </body>
 </html>
