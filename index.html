@@ -119,10 +119,10 @@ p, h2, h3 {
 
 /* VISIT COUNTER */
 #visits {
-    font-size: 25px;
+    font-size: 30px;
     color: #ff0;
     text-shadow: 0 0 5px #ffff00, 0 0 10px #ff9900;
-    margin-bottom: 10px;
+    margin: 15px 0;
 }
 
 /* SPINNER ANIMATION */
@@ -155,7 +155,7 @@ function updateVisits() {
   fetch('https://api.countapi.xyz/hit/mukabra/mantenimiento')
   .then(res => res.json())
   .then(data => {
-      document.getElementById('').innerText = ": " + data.value;
+      document.getElementById('visits').innerText = data.value;
   });
 }
 </script>
@@ -175,8 +175,6 @@ function updateVisits() {
     <span class="lang" onclick="setLang('en')">🇺🇸 English</span>
 </div>
 
-<!-- VISIT COUNTER -->
-<div id="visits">Visitas: 0</div>
 <div class="spinner"></div>
 
 <!-- SPANISH CONTENT -->
@@ -231,6 +229,9 @@ function updateVisits() {
 <a href="https://ibb.co/0pG3m0km">
 <img class="bottom" src="https://i.ibb.co/JWsPmYNm/1773777758387.png" alt="MU Kabra Banner">
 </a>
+
+<!-- VISIT COUNTER BELOW EVERYTHING -->
+<div id="visits">0</div>
 
 </body>
 </html>
