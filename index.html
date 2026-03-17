@@ -65,6 +65,7 @@ h1 {
     width: 90%;
     max-width: 650px;
     box-shadow: 0 0 25px #00ffff;
+    position: relative;
 }
 
 /* BUTTONS */
@@ -115,6 +116,32 @@ img.bottom {
 p, h2, h3 {
     text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
 }
+
+/* VISIT COUNTER */
+#visits {
+    font-size: 25px;
+    color: #ff0;
+    text-shadow: 0 0 5px #ffff00, 0 0 10px #ff9900;
+    margin-bottom: 10px;
+}
+
+/* SPINNER ANIMATION */
+.spinner {
+  border: 5px solid rgba(255,255,255,0.2);
+  border-top: 5px solid #00ffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
 </style>
 
 <script>
@@ -123,10 +150,19 @@ function setLang(lang) {
     document.getElementById("es").style.display = (lang=="es")?"block":"none";
     document.getElementById("en").style.display = (lang=="en")?"block":"none";
 }
+
+// VISIT COUNTER USANDO COUNTAPI
+function updateVisits() {
+  fetch('https://api.countapi.xyz/hit/mukabra/mantenimiento')
+  .then(res => res.json())
+  .then(data => {
+      document.getElementById('visits').innerText = data.value;
+  });
+}
 </script>
 
 </head>
-<body onload="setLang('es')">
+<body onload="setLang('es'); updateVisits();">
 
 <!-- LOGO -->
 <img class="logo" src="https://i.ibb.co/KjmdKY0D/1769438992147.png" alt="MU Kabra Logo">
@@ -140,11 +176,15 @@ function setLang(lang) {
     <span class="lang" onclick="setLang('en')">🇺🇸 English</span>
 </div>
 
+<!-- VISIT COUNTER -->
+<div id="visits">0</div>
+<div class="spinner"></div>
+
 <!-- SPANISH CONTENT -->
 <div id="es">
 <div class="box">
 <h2>🚧 Servidor en mantenimiento</h2>
-<p>Estamos trabajando en mejoras. Vuelve pronto 🔧</p>
+<p>Estamos trabajando en mejoras. Volvemos pronto 🔧</p>
 <p><b>Host:</b> Argentina 🇦🇷 LATAM</p>
 <p class="flags">🇦🇷 🇨🇱 🇵🇪 🇲🇽 🇧🇷 🇪🇸 🇺🇸</p>
 
@@ -158,8 +198,8 @@ function setLang(lang) {
 
 <a class="btn" href="https://chat.whatsapp.com/J8C50trBzos8lCqlBeHgFs?mode=gi_t">📲 WhatsApp</a>
 <a class="btn" href="https://discord.gg/myJAw5AMAB">💬 Discord</a>
+<a class="btn" href="https://www.mediafire.com/file/fc0a9qra5gu1kpf/%28S-y%29AdvancedWebShop_v08.rar/file">⬇️ Descargar Juego</a>
 
-<a class="btn" href="https://www.mediafire.com/file/ts1e7wihbsxmjbz/Cliente.rar/file" target="_blank" rel="noopener noreferrer">⬇️ Descargar Juego</a>
 <p>Mientras esperás, unite a nuestra comunidad 👆</p>
 </div>
 </div>
@@ -182,7 +222,7 @@ function setLang(lang) {
 
 <a class="btn" href="https://chat.whatsapp.com/J8C50trBzos8lCqlBeHgFs?mode=gi_t">📲 WhatsApp</a>
 <a class="btn" href="https://discord.gg/myJAw5AMAB">💬 Discord</a>
-<a class="btn" href="#">⬇️ Download Game</a>
+<a class="btn" href="https://www.mediafire.com/file/fc0a9qra5gu1kpf/%28S-y%29AdvancedWebShop_v08.rar/file">⬇️ Download Game</a>
 
 <p>Join our community while waiting 👆</p>
 </div>
