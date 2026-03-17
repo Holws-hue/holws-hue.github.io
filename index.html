@@ -37,7 +37,7 @@ body {
 /* GLOW ANIMATION */
 @keyframes glow {
     from {filter: drop-shadow(0 0 5px #00f);}
-    to {filter: drop-shadow(0 0 20px #0ff);}
+    to {filter: drop-shadow(0 0 25px #0ff);}
 }
 
 /* HEADINGS ANIMATION */
@@ -141,7 +141,6 @@ p, h2, h3 {
   0% { transform: rotate(0deg);}
   100% { transform: rotate(360deg);}
 }
-
 </style>
 
 <script>
@@ -151,12 +150,12 @@ function setLang(lang) {
     document.getElementById("en").style.display = (lang=="en")?"block":"none";
 }
 
-// VISIT COUNTER USANDO COUNTAPI
+// VISIT COUNTER
 function updateVisits() {
   fetch('https://api.countapi.xyz/hit/mukabra/mantenimiento')
   .then(res => res.json())
   .then(data => {
-      document.getElementById('visits').innerText = data.value;
+      document.getElementById('visits').innerText = "Visitas: " + data.value;
   });
 }
 </script>
@@ -177,14 +176,14 @@ function updateVisits() {
 </div>
 
 <!-- VISIT COUNTER -->
-<div id="visits">0</div>
+<div id="visits">Visitas: 0</div>
 <div class="spinner"></div>
 
 <!-- SPANISH CONTENT -->
 <div id="es">
 <div class="box">
 <h2>🚧 Servidor en mantenimiento</h2>
-<p>Estamos trabajando en mejoras. Volvemos pronto 🔧</p>
+<p>Estamos trabajando en mejoras y ajustes. Volvemos en unas horas 🔧</p>
 <p><b>Host:</b> Argentina 🇦🇷 LATAM</p>
 <p class="flags">🇦🇷 🇨🇱 🇵🇪 🇲🇽 🇧🇷 🇪🇸 🇺🇸</p>
 
